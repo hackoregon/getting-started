@@ -6,11 +6,11 @@ To use the Hack Oregon Base virtual box, it's necessary to first install the Vir
 
 2.  Download the Hack Oregon Base OVA file.   This file is ~4gb in size and is available via Google Drive [here](https://drive.google.com/open?id=0B2VTjTSmFU2lWnJUQTR3T3NQdTg).   Note that if possible, it would be best to get this file off of a thumb drive or some other non-network source, as it will take a very long time to download on slow or congested networks.
 
-3.  Start Oracle Virtual Box application.   
+3. Start Oracle Virtual Box application.   
 
-4.  Choose File->Import Appliance... menu.   Navigate to where the HackOregonBase.ova was downloaded to and import it.
+4. Choose File->Import Appliance... menu.   Navigate to where the HackOregonBase.ova was downloaded to and import it.
 
-5.   Once complete, the following should result
+5. Once complete, the following should result
 
 ![virtualbox1.jpg](virtualbox1.png)
 
@@ -18,5 +18,11 @@ To use the Hack Oregon Base virtual box, it's necessary to first install the Vir
 
 ![virtualbox2.jpg](virtualbox2.png)
 
-7.   Login with username: '''hack''' password:  '''ORturkeyeggs'''
+7. Login with username: hack password:  ORturkeyeggs
 
+## To Start Jupyter Notebook
+
+hack@hackoregon-base:~$  activate-data-science
+(data science) hack@hackoregon-base:~$  jupyter notebook --ip 0.0.0.0 --no-browser
+
+And then using your web broswer, go to:  http://localhost:7777/tree
