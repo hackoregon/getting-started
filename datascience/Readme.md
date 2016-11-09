@@ -1,2 +1,2 @@
-This area provides information to install the tooling used for Hack Oregon data cleaning, analysis, and storage.
+This area provides information to install and use tooling used for Hack Oregon data cleaning, analysis, and storage.
 
