@@ -35,15 +35,15 @@ You should then see the jupyter page
 
 ![virtualbox3.png](virtualbox3.png)
 
-8. Opening a terminal in the virtual machine from the browser:
+## Opening a terminal in the virtual machine from the browser:
 Once you've connected in the browser, you can open a terminal window in the virtual machine as a browser tab. Pull down the "New" drop-down menu at the upper right and select "Terminal". A browser tab will open up with a terminal.
 
 ![jupyter-terminal.png](jupyter-terminal.png)
 
-9. Root access:
+## Root access:
 If for any reason you need "root" access, type `sudo` followed by the command that must run as root. You'll have to enter the password for the "hack" account.
 
-10. Changing the "hack" account password:
+## Changing the "hack" account password:
 Since the password for the "hack" account is publicly known, it's a good idea to change it to something only you know. To do that, type `passwd` and follow instructions.
 
 ```
