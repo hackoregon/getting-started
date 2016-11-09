@@ -1,0 +1,22 @@
+#! /bin/bash
+
+echo "Installing LaTeX packages - this will take some time!"
+sudo apt-get install -y \
+  calibre \
+  lmodern \
+  texinfo \
+  texlive-fonts-recommended \
+  texlive-generic-recommended \
+  texlive-latex-base \
+  texlive-latex-extra \
+  texlive-latex-recommended  \
+  texlive-xetex  \
+  xindy
+
+# use US letter paper size
+sudo paperconfig -p letter
+sudo tl-paper set all letter
+
+echo "Installing authoring tools"
+R -e 'install.packages(c("flexdashboard", "bookdown", "tufte", "rticles"), quiet = TRUE)'
+R -e 'devtools::install_github("rstudio/bookdown", build_vignettes = TRUE)'

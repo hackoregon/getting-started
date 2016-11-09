@@ -1,0 +1,17 @@
+#! /bin/bash
+
+echo "Installing Virtual Machine Manager"
+sudo apt-get install -y \
+  virt-manager \
+  qemu-kvm \
+  qemu-utils \
+  gir1.2-spice-client-gtk-3.0 \
+  libosinfo-bin \
+  libspice-client-gtk-3.0-4 \
+  libvirt-bin \
+  uvtool \
+  uvtool-libvirt \
+  virt-viewer \
+  virtinst
+sudo gpasswd -a ${USER} libvirtd
+echo "Log out and back in to join the 'libvirtd' group!"

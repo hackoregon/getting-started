@@ -1,0 +1,3 @@
+alias activate-data-science="source $HOME/miniconda3/bin/activate data-science"
+alias deactivate-data-science="source $HOME/miniconda3/bin/deactivate data-science"
+alias conda="$HOME/miniconda3/bin/conda"

@@ -1,0 +1,25 @@
+#! /bin/bash
+
+echo "Adding PostgreSQL / PostGIS package repository"
+sudo cp postgis.list /etc/apt/sources.list.d/
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc \
+  | sudo apt-key add -
+sudo apt-get update > /dev/null && sudo apt-file update > /dev/null 2>&1
+
+echo "Installing database and GIS service packages"
+sudo apt-get install -y \
+  postgresql-9.5 \
+  postgresql-client-9.5 \
+  postgresql-contrib-9.5 \
+  postgresql-doc-9.5 \
+  postgresql-9.5-postgis-2.2 \
+  postgresql-plpython3-9.5 \
+  postgresql-9.5-pgrouting \
+  postgresql-9.5-pgrouting-doc \
+  postgresql-9.5-postgis-2.2-scripts
+
+# make yourself a PostgreSQL superuser
+echo "If you're already a PostgreSQL superuser you can ignore the error message."
+sudo su -c "createuser -s ${USER}" postgres
+echo "http://apt.postgresql.org/pub/repos/apt repository added!"
+echo "You are now a PostgreSQL super-user with ID '${USER}'!"

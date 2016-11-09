@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+.R*
+README.html
+.Rproj.user
+*.log
+.vagrant

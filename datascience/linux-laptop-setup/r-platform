@@ -1,0 +1,45 @@
+#! /bin/bash
+
+echo "Adding CRAN repository for R packages"
+sudo cp cran-ubuntu.list /etc/apt/sources.list.d
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+sudo apt-get update > /dev/null && sudo apt-file update > /dev/null 2>&1
+
+echo "Installing OS packages - this will take some time!"
+sudo apt-get install -y \
+  default-java-plugin \
+  default-jdk \
+  default-jre \
+  libcurl4-openssl-dev \
+  libssh2-1-dev \
+  libssl-dev \
+  libxml2-dev \
+  pandoc \
+  pandoc-citeproc \
+  r-base \
+  r-base-dev
+
+echo "Creating a TMPDIR on hard drive for R package installs"
+sudo mkdir -p /TMPDIR
+sudo chmod a+rwx /TMPDIR
+sudo cp Rprofile.site `R RHOME`/etc/
+
+echo "Setting the job count for parallel 'make' operations"
+sudo sed -i "s;^MAKE.*$;MAKE='make -j 1';" `R RHOME`/etc/Renviron
+
+echo "Testing Java interface"
+sudo R CMD javareconf
+
+echo "Creating an R package library for $USER"
+R --no-save < `R RHOME`/etc/Rprofile.site
+
+echo "Installing R package development tools"
+R -e 'install.packages(c("devtools", "roxygen2"), quiet = TRUE)'
+
+echo "Installing the tidyverse"
+R -e 'install.packages(c("tidyverse", "XML"), quiet = TRUE)'
+
+echo "Installing Shiny"
+R -e 'install.packages("shiny", quiet = TRUE)'
+
+echo "https://cran.rstudio.com/bin/linux/ubuntu repository added"

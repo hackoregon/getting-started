@@ -1,0 +1,43 @@
+#! /bin/bash
+
+# what machine have we got?
+if [ `arch` == "x86_64" ]
+then
+  export ARCH=64
+  echo "Your machine is ${ARCH} bits."
+  echo "You can host Hack Oregon virtual machines / Vagrant boxes."
+else
+  export ARCH=32
+  echo "Your machine is ${ARCH} bits."
+  echo "Warning: Hack Oregon virtual machines / Vagrant boxes won't work."
+fi
+
+echo "Adding the Oracle VirtualBox repository"
+sudo cp virtualbox.list /etc/apt/sources.list.d/
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+sudo apt-get update > /dev/null && sudo apt-file update > /dev/null 2>&1
+
+echo "Installing VirtualBox"
+sudo apt-get install virtualbox-5.0 -y
+
+# join the group
+sudo gpasswd -a ${USER} vboxusers
+
+echo "You will need to install Vagrant from the Hashicorp website:"
+echo ""
+echo "1. Browse to 'https://www.vagrantup.com/downloads.html'."
+echo "2. Find the link to the Debian package for ${ARCH}-bit systems."
+echo "3. Click the link to open it with the package installer."
+echo "   This should be the browser default."
+echo "4. You may get a dialog box about an older version being available in a"
+echo "   software channel. If you do, press the 'Close' button. You want to use this new version!"
+echo "   Hack Oregon Vagrant boxes won't work with older versions of Vagrant!"
+echo "5. Press the 'Install' button."
+echo "   You may get a dialog box about authentication / administrative rights."
+echo "   If you do, enter your password and press 'OK'."
+echo "6. When the install finishes, press the 'Close' button."
+echo "   Then close the installer window and the browser."
+echo ""
+read -p "Press 'Enter' when the install has finished."
+echo "http://download.virtualbox.org/virtualbox/debian repository added!"
+echo "Reboot now to make sure VirtualBox kernel modules are updated."

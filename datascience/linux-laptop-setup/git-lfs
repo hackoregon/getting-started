@@ -1,0 +1,8 @@
+#! /bin/bash
+
+echo "Adding the Git LFS repository"
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get update > /dev/null && sudo apt-file update > /dev/null 2>&1
+
+echo "Installing Git LFS"
+sudo apt-get install -y git-lfs

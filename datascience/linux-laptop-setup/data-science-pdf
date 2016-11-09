@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# LaTeX packages for PDF notebook downloads
+# File an issue at https://github.com/hackoregon/linux-laptop-setup/issues/new if you need others
+sudo apt-get install -y \
+  pandoc \
+  pandoc-citeproc \
+  texlive-latex-base \
+  texlive-fonts-recommended \
+  texlive-latex-recommended \
+  texlive-latex-extra \
+  texlive-generic-recommended
+
+# use US letter paper size
+sudo paperconfig -p letter
+sudo tl-paper set all letter

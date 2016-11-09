@@ -1,0 +1,28 @@
+#! /bin/bash
+
+# what machine have we got?
+if [ `arch` == "x86_64" ]
+then
+  export ARCH=64
+  export TAG=amd64
+else
+  export ARCH=32
+  export TAG=i386
+fi
+echo  "Your machine is ${ARCH} bits."
+
+echo "Making sure $HOME/Downloads exists."
+mkdir -p $HOME/Downloads
+
+pushd $HOME/Downloads
+echo "Removing any old RStudio installers."
+rm -f rstudio*
+echo "Downloading the latest RStudio Server installer."
+wget -q https://download2.rstudio.org/rstudio-server-1.0.44-$TAG.deb
+echo "Download is finished."
+sudo gdebi --non-interactive rstudio-server-1.0.44-$TAG.deb
+popd
+
+echo "RStudio Server is listening on port 8787"
+echo "For more information, see"
+echo "https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started"

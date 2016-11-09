@@ -1,0 +1,53 @@
+#
+# Copyright (C) 2016 M. Edward (Ed) Borasky <znmeb@znmeb.net>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# .Rprofile -- commands to execute at the beginning of each R session
+#
+# You can use this file to load packages, set options, etc.
+#
+# NOTE: changes in this file won't be reflected until after you quit
+# and start a new session
+
+Sys.setenv(R_PAPERSIZE = "letter")
+Sys.setenv(LANG = "en_US.UTF-8")
+Sys.setenv(LC_CTYPE = "en_US.UTF-8")
+Sys.setenv(LC_NUMERIC = "en_US.UTF-8")
+Sys.setenv(LC_TIME = "en_US.UTF-8")
+Sys.setenv(LC_COLLATE = "en_US.UTF-8")
+Sys.setenv(LC_MONETARY = "en_US.UTF-8")
+Sys.setenv(LC_MESSAGES = "en_US.UTF-8")
+Sys.setenv(LC_PAPER = "en_US.UTF-8")
+Sys.setenv(LC_NAME = "en_US.UTF-8")
+Sys.setenv(LC_ADDRESS = "en_US.UTF-8")
+Sys.setenv(LC_TELEPHONE = "en_US.UTF-8")
+Sys.setenv(LC_MEASUREMENT = "en_US.UTF-8")
+Sys.setenv(LC_IDENTIFICATION = "en_US.UTF-8")
+Sys.setenv(TMPDIR = "/TMPDIR")
+
+# make library directory if we're not 'root'
+if (as.list(Sys.info())$user != 'root') {
+  if (!dir.exists(Sys.getenv('R_LIBS_USER'))) {
+    dir.create(Sys.getenv('R_LIBS_USER'), recursive = TRUE, mode = '0755')
+  }
+}
+
+# secure package download
+options(download.file.method = "curl")
+local({
+   r <- getOption("repos");
+   r["CRAN"] <- "https://cran.rstudio.com/"
+   options(repos=r)
+})
+
+# devtools issue
+options(unzip = "unzip")

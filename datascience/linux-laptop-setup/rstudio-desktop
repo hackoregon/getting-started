@@ -1,0 +1,25 @@
+#! /bin/bash
+
+# what machine have we got?
+if [ `arch` == "x86_64" ]
+then
+  export ARCH=64
+else
+  export ARCH=32
+fi
+echo  "Your machine is ${ARCH} bits."
+
+echo "You will need to install RStudio® Desktop from the RStudio download website:"
+echo ""
+echo "1. Browse to 'https://www.rstudio.com/products/rstudio/download3/'."
+echo "2. Find the link to the Ubuntu / Debian package for ${ARCH}-bit systems."
+echo "   The package download links are towards the bottom of the page."
+echo "3. Click the link to open it with the package installer."
+echo "   This should be the browser default."
+echo "4. Press the 'Install' button."
+echo "   You may get a dialog box about authentication / administrative rights."
+echo "   If you do, enter your password and press 'OK'."
+echo "5. When the install finishes, press the 'Close' button."
+echo "   Then close the installer window and the browser."
+echo ""
+read -p "Press 'Enter' here when the install has finished."

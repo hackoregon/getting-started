@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# QGIS repo for latest stable packages
+echo "Adding QGIS package repository"
+sudo cp qgis.list /etc/apt/sources.list.d/
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 073D307A618E5811
+sudo apt-get update > /dev/null && sudo apt-file update > /dev/null 2>&1
+
+echo "Installing database / GIS GUI packages"
+sudo apt-get install -y \
+  pgadmin3 \
+  qgis
+
+echo "http://qgis.org/debian repository added!"

@@ -1,0 +1,16 @@
+#! /bin/bash
+
+echo "installing the core packages"
+sudo apt update && sudo apt-get install -y \
+  apt-file \
+  build-essential \
+  cpu-checker \
+  curl \
+  dkms \
+  gdebi-core \
+  linux-headers-$(uname -r) \
+  sysstat \
+  wget
+
+echo "updating the apt-file index"
+sudo apt-file update > /dev/null 2>&1

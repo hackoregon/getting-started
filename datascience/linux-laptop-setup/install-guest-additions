@@ -1,0 +1,12 @@
+#! /bin/bash
+
+echo "In the 'Devices' menu above the virtual console, select"
+echo "'Insert Guest Additions CD Image'"
+read -p "Press 'Enter' here when done."
+echo ""
+echo "Creating a mount point for the ISO file"
+sudo mkdir -p /mnt/cdrom
+echo "Mounting the ISO file"
+sudo mount /dev/sr0 /mnt/cdrom
+echo "Installing the guest additions"
+sudo /mnt/cdrom/VBoxLinuxAdditions.run
