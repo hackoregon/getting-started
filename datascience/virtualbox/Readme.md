@@ -18,5 +18,5 @@ To use the Hack Oregon Base virtual box, it's necessary to first install the Vir
 
 ![virtualbox2.jpg](virtualbox2.png)
 
-
+7.   Login with username: '''hack''' password:  '''ORturkeyeggs'''
 
