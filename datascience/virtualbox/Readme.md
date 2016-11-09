@@ -18,17 +18,19 @@ To use the Hack Oregon Base virtual box, it's necessary to first install the Vir
 
 ![virtualbox2.jpg](virtualbox2.png)
 
-7. Login with username: hack password:  ORturkeyeggs
+7. Login with 
+
+    username: hack 
+    password:  ORturkeyeggs
 
 ## To Start Jupyter Notebook
 
     hack@hackoregon-base:~$  activate-data-science
-    
     (data science) hack@hackoregon-base:~$  jupyter notebook --ip 0.0.0.0 --no-browser
 
 And then using your web broswer, go to:  http://localhost:7777/tree
 
 You should then see the jupyter page
 
-![virtualbox3.jpg](virtualbox3.jpg)
+![virtualbox3.png](virtualbox3.png)
 
