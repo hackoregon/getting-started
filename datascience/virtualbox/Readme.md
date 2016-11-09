@@ -2,4 +2,4 @@ These are the instructions for using an existing virtual box instance (*.ova fil
 
 First, it's necessary to install Virtual Box on your operating system.   To Download and install Virtual Box see
 
-#### Download and install the appropriate version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+#### [Download and install the appropriate version of VirtualBox](https://www.virtualbox.org/wiki/Downloads)
