@@ -29,7 +29,7 @@ To use the Hack Oregon Base virtual box, it's necessary to first install the Vir
     hack@hackoregon-base:~$  activate-data-science
     (data science) hack@hackoregon-base:~$  jupyter notebook --ip 0.0.0.0 --no-browser
 
-And then using your web broswer, go to:  http://localhost:7777/tree
+Then using your web broswer go to: http://localhost:7777/tree
 
 You should then see the jupyter page
 
