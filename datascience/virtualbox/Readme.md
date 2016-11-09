@@ -12,7 +12,7 @@ To use the Hack Oregon Base virtual box, it's necessary to first install the Vir
 
 5.   Once complete, the following should result
 
-[
+[virtualbox1.jpg](virtualbox1.jpg)
 
 
 
