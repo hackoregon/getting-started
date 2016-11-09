@@ -5,7 +5,7 @@ M. Edward (Ed) Borasky <znmeb@znmeb.net>
 Bugs? Feature requests? Unclear documentation?
 ----------------------------------------------
 
-File an issue at <https://github.com/hackoregon/linux-laptop-setup/issues/new>.
+File an issue at <https://github.com/hackoregon/getting-started/issues/new>.
 
 Design goals
 ------------
@@ -21,7 +21,7 @@ Which version of Linux should you use?
 
 I've designed these scripts on Linux Mint 18 "Sarah" with the Cinnamon desktop (<https://www.linuxmint.com/download.php>). I test them on a Sarah 64-bit Cinnamon system, a Sarah 32-bit KDE virtual machine and an Ubuntu 16.04.1 32-bit virtual machine with the default "Unity" desktop.
 
-Except for virtual machine hosting, they should work on any of the Linux Mint "Sarah" desktops and any Ubuntu 16.04.1 LTS "Xenial Xerus" desktop, 32 or 64 bits. File an issue at <https://github.com/hackoregon/linux-laptop-setup/issues/new> if you find problems on an Ubuntu 16.04.1 or Linux Mint 18 system.
+Except for virtual machine hosting, they should work on any of the Linux Mint "Sarah" desktops and any Ubuntu 16.04.1 LTS "Xenial Xerus" desktop, 32 or 64 bits. File an issue at <https://github.com/hackoregon/getting-started/issues/new> if you find problems on an Ubuntu 16.04.1 or Linux Mint 18 system.
 
 Why Linux Mint 18 / Ubuntu 16.04.1 LTS?
 ---------------------------------------
@@ -46,8 +46,8 @@ You'll need wall power and a reliable internet connection. Coffee shop WiFi can 
 
 For virtual machine hosting, you need to have twice as much RAM in the host as the total RAM in all the active guests. My goal is for everything except virtual machine hosting to run in a 1 GiB machine.
 
-1.  Download and unpack <https://github.com/hackoregon/linux-laptop-setup/archive/master.zip>. This will create a directory `linux-laptop-setup-master`.
-2.  Open a terminal and `cd` into the directory.
+1.  `git clone https://github.com/hackoregon/getting-started.git`.
+2.  Open a terminal and `cd` into `getting-started/datascience/linux-laptop-setup`.
 3.  About `sudo`: `sudo` (super-user do) is a Linux utility that allows you to perform adminstrative tasks like installing software by temporarily operating as the `root` super-user. If you see the prompt `[sudo] password for <your username>:`, enter *your* password.
 
     `sudo` will remember that you have authenticated and not bother you again for a system-dependent time period. If that timeout expires, you will have to authenticate again. For install scripts that run a long time, you'll need to watch for this.
@@ -74,6 +74,8 @@ The data science services environment includes
 -   scikit-learn (<http://scikit-learn.org/stable/>)
 -   seaborn (<http://seaborn.pydata.org/>)
 -   statsmodels (<http://statsmodels.sourceforge.net/>)
+-   Django
+-   Django REST framework
 
 To start a Jupyter notebook with all the tools, open a terminal and enter `activate-data-science`. Your prompt will change to something like
 
@@ -104,7 +106,7 @@ Note that as installed, the PostgreSQL service is only accessible inside the wor
 QGIS and PgAdmin3 GUI tools
 ---------------------------
 
-Type `.database-gis-gui` to install the QGIS (Quantum GIS) and PgAdmin3 desktop GUI tools.
+Type `./database-gis-gui` to install the QGIS (Quantum GIS) and PgAdmin3 desktop GUI tools.
 
 Advanced tools
 --------------
@@ -158,11 +160,10 @@ We used this last year for Crop Compass. Note that GitHub charges money for both
 Bugs? Feature requests? Unclear documentation?
 ----------------------------------------------
 
-File an issue at <https://github.com/hackoregon/linux-laptop-setup/issues/new>.
+File an issue at <https://github.com/hackoregon/getting-started/issues/new>.
 
 Todo
 ----
 
 1.  Instructions for connecting QGIS to the PostGIS database.
 2.  Front-end tools: I'm not a front-end person so I have no idea what we'll need there. If there's something you want, file an issue and I'll add it.
-3.  Django: The last I heard we'll be using Django for some projects. I am working through <https://www.amazon.com/Mastering-Django-Core-Complete-Guide-ebook/dp/B01KR6F4Z2> and can easily add install scripts if anyone wants them.
