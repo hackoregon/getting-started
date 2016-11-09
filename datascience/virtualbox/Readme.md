@@ -21,7 +21,8 @@ To use the Hack Oregon Base virtual box, it's necessary to first install the Vir
 7. Login with 
 
     username: hack 
-    password:  ORturkeyeggs
+    
+    password: ORturkeyeggs
 
 ## To Start Jupyter Notebook
 
