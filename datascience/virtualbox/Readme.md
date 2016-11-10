@@ -1,4 +1,4 @@
-These are the instructions for installing and using the Hack Oregon Base instance (HackOregonBase.ova file) to install and use a python interpreter (miniconda), jupyter notebook, and a postgres server.
+These are the instructions for installing and using the Hack Oregon Base instance (HackOregonBase.ova file) to install and use a python interpreter (miniconda), jupyter notebook, and a postgres server.  All three of these have already been installed into the HackOregonBase.ova (Open Virtualization Archive).
 
 To use the Hack Oregon Base virtual box, it's necessary to first install the Virtual Box software on your operating system.   
 
