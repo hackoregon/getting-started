@@ -24,5 +24,9 @@ A good choice for GitHub GUI would be the [Github Desktop Client](https://deskto
 
 For the lover of command line interfaces, there is the (original) git command line client.  [Here are instructions for installing the git command line clients on linux, mac, and windows](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).  
 
+## Github Tutorials
+
+[Hello Github World Tutorial](https://guides.github.com/activities/hello-world/)
+[Understanding Github](http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1/)
 
 
