@@ -21,13 +21,13 @@
   
 5. Close psql by entering the '\q' command in the psql session and hitting enter 
 
-#### Now that you have a new super user created we need to activate the Jupyter Notebook virtual environment and install the Python psycopg2 package that lets us make connections to the DB
+#### Now that you have a new superuser created we need to activate the Jupyter Notebook virtual environment and install the Python psycopg2 package that lets us make connections to the DB
 
 1. Activate the Jupyter Notebook environment with the command below
   * activate-data-science
   * you should now see this prompt in your terminal session: '(data-science) hack@hackoregon-base'
   
-2. Use pip to install psycopg2 using the following commang
+2. Use pip to install psycopg2 using the following command
   * pip install psycopg2
   
 #### You now have the pieces needed to connect to the DB using Jupyter Notebook. Open a Jupyter Notebook by following the steps below.
@@ -37,7 +37,7 @@
   * if it doesn't enter this command: 'activate-data-science'
   * finally enter 'jupyter notebook --ip 0.0.0.0 --no-browser' to start the notebook server
   
-2. Then using your web broswer go to: http://localhost:7777/tree
+2. Then using your web browser go to: http://localhost:7777/tree
   * you should now see the file structure of the VM inside a Jupyter notebook in your browser 
 
 #### Creating a new notebook so you can start writing scripts and connect to the DB
