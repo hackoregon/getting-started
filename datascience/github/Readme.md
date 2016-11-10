@@ -18,7 +18,7 @@ Note that it's common to combine/use several git clients although not necessary.
 
 ## GUI Client
 
-A good choice for GitHub GUI would be the [Github Desktop Client](https://desktop.github.com/).  Alternatively there are a number of free and commercial GUI clients for git.  See [here](https://git-scm.com/download/gui/linux)).   If you choose to use a client with a license cost, please remember that you are responsible for the meeting the licensing terms.
+A good choice for GitHub GUI would be the [Github Desktop Client](https://desktop.github.com/).  Alternatively there are a number of free and commercial GUI clients for git.  See [here](https://git-scm.com/downloads/guis)).   If you choose to use a client with a license cost, please remember that you are responsible for the meeting the licensing terms.
 
 ## Command-Line Client
 
