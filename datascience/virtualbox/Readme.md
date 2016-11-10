@@ -14,9 +14,7 @@ To use the Hack Oregon Base virtual box, it's necessary to first install the Vir
 
 ![virtualbox1.jpg](virtualbox1.png)
 
-6.  Select the Hack Oregon Base box, and click on the Start button.  This will open a separate window, start the Ubuntu OS, resulting in the following
-
-![virtualbox2.jpg](virtualbox2.png)
+6.  Select the Hack Oregon Base box, and click on the Start button.  This will open a separate window, start the Ubuntu OS, and eventually produce a unix login prompt.
 
 7. Login with 
 
