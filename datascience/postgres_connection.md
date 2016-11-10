@@ -16,7 +16,7 @@
   * psql 
   * you should now see this prompt: 'postgres=#'
   
-4. Inside psql session create a new super user using command below
+4. Inside psql session create a new superuser using command below
   * CREATE USER turkey WITH SUPERUSER PASSWORD 'ORturkeyeggs';
   
 5. Close psql by entering the '\q' command in the psql session and hitting enter 
