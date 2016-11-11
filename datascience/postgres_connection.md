@@ -27,9 +27,9 @@
   * activate-data-science
   * you should now see this prompt in your terminal session: '(data-science) hack@hackoregon-base'
   
-2. Install dependecy for psycopg2 using command below
+2. Install dependency for psycopg2 using command below
  * sudo apt-get install libpq-dev
- 
+
 3. Use pip to install psycopg2 using the following command
   * pip install psycopg2
   
@@ -53,31 +53,26 @@
 
 #### Add the snippet below to the notebook's cell to test the DB connection 
 
+```python
+import psycopg2
+import pandas as pd
 
-    import psycopg2
-    
-    # enter the values below from your VM, the defaults are already set change if needed
-    DATABASE = 'postgres'
-    USER = 'turkey'
-    PASSWORD = 'ORturkeyeggs'
-    
-    # makes connection to DB
-    conn = psycopg2.connect(database=DATABASE, user=USER, password=PASSWORD, host='localhost', port=5432)
-    
-    # makes cursor that lets you make queries to the DB
-    cur = conn.cursor()
+# enter the values below from your VM, the defaults are already set change if needed
+DATABASE = 'postgres'
+USER = 'turkey'
+PASSWORD = 'ORturkeyeggs'
 
-    def connection_test():
-        sql_state = "SELECT * FROM information_schema.information_schema_catalog_name;"
-        cur.execute(sql_state)
+# makes connection to DB
+conn = psycopg2.connect(database=DATABASE, user=USER, password=PASSWORD, host='localhost', port=5432)
 
-        data = cur.fetchall()
-        print(data)
+# use pandas to query postgres and create a dataframe
+pd.read_sql_query('SELECT * FROM information_schema.information_schema_catalog_name;', con=conn)
+```
 
-    connection_test()
+#### After adding the above code the the first cell in your notebook and running it you should see this output: 
 
-    cur.close()
-
-#### After adding the above code the the first cell in your notebook and running it you should see this output: '[('postgres',)]'
+|   | **catalog_name** |
+|---|------------------|
+| 0 | postgres         |
 
 ##### See the docs for psycopg2 here: http://initd.org/psycopg/docs/usage.html
