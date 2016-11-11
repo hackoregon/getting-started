@@ -27,7 +27,8 @@
   * activate-data-science
   * you should now see this prompt in your terminal session: '(data-science) hack@hackoregon-base'
   
-2. Use pip to install psycopg2 using the following command
+2. Use pip to install psycopg2 and its dependencies using the following commands
+  * sudo apt-get install libpq-dev
   * pip install psycopg2
   
 #### You now have the pieces needed to connect to the DB using Jupyter Notebook. Open a Jupyter Notebook by following the steps below.
