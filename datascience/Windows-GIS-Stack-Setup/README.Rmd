@@ -41,7 +41,7 @@ Download the installer at <http://conda.pydata.org/miniconda.html>. The 64-bit i
 1. Find the 'Anaconda Prompt' entry in your Windows start menu. Open it and enter `conda update --yes --all`. This will download and install the latest packages.
 
     ![](Screenshots/2016-11-08 15_06_26.png)
-1. Enter `conda create -n data-science jupyter scikit-learn seaborn statsmodel django` to create the  data-science Conda environment and install the packages listed in it. Anaconda will add buttons to your Windows start buttons for `data-science`.
+1. Enter `conda create -n data-science jupyter scikit-learn seaborn statsmodels django` to create the  data-science Conda environment and install the packages listed in it. Anaconda will add buttons to your Windows start buttons for `data-science`.
 
     ![](Screenshots/2016-11-08 15_08_00.png)
 1. Enter `activate data-science` and `pip install djangorestframework` to install the Django Rest Framework.
