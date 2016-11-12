@@ -5,9 +5,9 @@
 
 echo "Installing the SSH key for 'vagrant'"
 mkdir -p ~vagrant/.ssh
-wget -O ~/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
+wget -O ~vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
 chmod 0700 ~vagrant/.ssh
-chmod 0600 ~/vagrant/.ssh/authorized_keys
+chmod 0600 ~vagrant/.ssh/authorized_keys
 
 echo "Creating the '/vagrant' mount point"
 sudo mkdir -p /vagrant
