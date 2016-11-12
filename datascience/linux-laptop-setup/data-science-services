@@ -45,7 +45,7 @@ echo "Creating a Conda environment named 'data-science' with 'django', 'jupyter'
 echo "'seaborn', 'statsmodels' and 'scikit-learn'. This will not overwrite an"
 echo "existing 'data-science'. You can ignore the error it throws when it tries."
 ~/miniconda3/bin/conda create --yes --name data-science \
-  django jupyter seaborn statsmodels scikit-learn
+  django jupyter seaborn statsmodels scikit-learn gdal
 
 echo ""
 echo "Installing 'djangorestframework' in 'data-science' with pip."
