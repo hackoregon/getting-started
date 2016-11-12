@@ -1,0 +1,28 @@
+#! /bin/bash
+
+# https://www.vagrantup.com/docs/boxes/base.html
+# 
+
+echo "Creating the vagrant user"
+sudo useradd --comment "Vagrant user" --user-group --create-home vagrant
+
+echo "Setting the 'root' and 'vagrant' passwords"
+echo "root:vagrant" | sudo chpasswd
+echo "vagrant:vagrant" | sudo chpasswd
+
+echo "Installing the SSH key for 'vagrant'"
+sudo mkdir -p ~vagrant/.ssh
+sudo wget -O ~/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
+sudo chmod 0700 ~vagrant/.ssh
+sudo chmod 0600 ~/vagrant/.ssh/authorized_keys
+sudo chown -R vagrant:vagrant ~vagrant
+
+echo "Disabling reverse DNS lookup for ssh"
+sudo cat Use-DNS-no >> /etc/config/sshd_config
+
+echo "The final step requires human intervention. An editor will open using"
+echo "'visudo'. Add the line"
+echo ""
+echo "    vagrant ALL=(ALL:ALL) NOPASSWD: ALL"
+echo ""
+echo "at the bottom of the file, save the file and close the editor."
