@@ -17,6 +17,10 @@ sudo chmod 0700 ~vagrant/.ssh
 sudo chmod 0600 ~/vagrant/.ssh/authorized_keys
 sudo chown -R vagrant:vagrant ~vagrant
 
+echo "Creating the '/vagrant' mount point"
+sudo mkdir -p /vagrant
+sudo chown -R vagrant:vagrant /vagrant
+
 echo "Disabling reverse DNS lookup for ssh"
 sudo cat Use-DNS-no >> /etc/config/sshd_config
 
