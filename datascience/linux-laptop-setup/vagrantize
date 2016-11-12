@@ -14,7 +14,7 @@ sudo mkdir -p /vagrant
 sudo chown -R vagrant:vagrant /vagrant
 
 echo "Disabling reverse DNS lookup for ssh"
-sudo cat Use-DNS-no >> /etc/config/sshd_config
+sudo cat Use-DNS-no >> /etc/ssh/sshd_config
 
 echo "The final step requires human intervention. An editor will open using"
 echo "'visudo'. Add the line"
