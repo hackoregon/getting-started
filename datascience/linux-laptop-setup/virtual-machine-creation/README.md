@@ -32,21 +32,26 @@
 10. The installer will start again. Accept the defaults until you come to 'Software selection'. Select ***both*** 'standard system utilities' and 'OpenSSH server'.
 11. The installer will start again. Accept the defaults until the install is complete. Then select 'Continue' to reboot the virtual machine.
 12. When the virtual machine comes up, log in on the console as 'vagrant'.
-14. Type `sudo shutdown -h now` to power off the virtual machine. The virtual machine will shut down.
+14. Enter `sudo shutdown -h now` to power off the virtual machine. The virtual machine will shut down.
 15. You now have a Ubuntu 16.04.1 LTS server virtual machine!
 
 ## Installing the Hack Oregon services
 1. Start the virtual machine.
 2. When the virtual machine console shows a login prompt, log in as 'vagrant'.
-
-2. Type `git clone https://github.com/hackoregon/getting-started`.
-3. Type `cd getting-started/datascience/linux-laptop-setup`.
-4. Type `git checkout <working branch>`.
-6. Type `./0update-upgrade`. This will upgrade all packages to the latest versions and will take some time.
+3. Enter `sudo visudo`. Enter the 'vagrant' password when 'sudo' asks for it. Then add the line
+    ````
+    vagrant ALL=(ALL:ALL) NOPASSWD: ALL
+    ```
+    
+    to the bottom of the file. Then press `Control-O`, `Enter` and `Control-X` to save the file. 'sudo' will no longer ask you for a password!
+2. Enter `git clone https://github.com/hackoregon/getting-started`.
+3. Enter `cd getting-started/datascience/linux-laptop-setup`.
+4. Enter `git checkout <working branch>`.
+6. Enter `./0update-upgrade`. This will upgrade all packages to the latest versions and will take some time.
 5. Reboot the virtual machine with `sudo reboot`.
 5. When the virtual machine is back up, log back in again.
-3. Type `cd getting-started/datascience/linux-laptop-setup`.
-6. Type `./all-services` This is a master script that will run
+3. Enter `cd getting-started/datascience/linux-laptop-setup`.
+6. Enter `./all-services`. You will need to enter the 'vagrant' password whenever 'sudo' asks for it. This is a master script that will run
     * `./1core`. This will install the core packages for all users.
     * `./database-gis-services`. This installs PostgreSQL and PostGIS for all users on the virtual machine. It will add 'vagrant' as a database super-user.
     * `./data-science-services`. This will install Miniconda and the data science environment for the 'vagrant' user.
@@ -59,21 +64,21 @@ This procedure is optional but highly recommended.
 
 1. Open the VirtualBox GUI, go into the "Storage" settings and connect the ISO file for an Ubuntu 16.04.1 LTS desktop. I use Linux Mint 18, but any desktop will work as long as it's based on Ubuntu 16.04.1 LTS.
 2. Start the virtual machine. It will come up in the live system's desktop, not in the server you just installed.
-3. Open a terminal. Type `sudo apt install zerofree`.
-4. Type `sudo zerofree -v /dev/sda1`. This will fill all the unused blocks in the virtual disk with zeroes, resulting in a smaller image when compacted. It will take some time.
+3. Open a terminal. Enter `sudo apt install zerofree`.
+4. Enter `sudo zerofree -v /dev/sda1`. This will fill all the unused blocks in the virtual disk with zeroes, resulting in a smaller image when compacted. It will take some time.
 5. Shut the virtual machine down with `sudo shutdown -h now` and remove the virtual CD from the drive in the 'Storage' settings.
-6. In the host command line, type `VBoxManage list hdds`. You will see a hard disk with a random-looking "UUID" string. Copy this string into the clipboard.
-7. Type `VBoxManage modifyhd --compact <paste the UUID here>`. This will also take some time.
+6. In the host command line, enter `VBoxManage list hdds`. You will see a hard disk with a random-looking "UUID" string. Copy this string into the clipboard.
+7. Enter `VBoxManage modifyhd --compact <paste the UUID here>`. This will also take some time.
 
 ## Packaging the virtual machine as a Vagrant box
 Reference: <https://www.vagrantup.com/docs/virtualbox/boxes.html>
 
-1. Open a host terminal and type `vagrant package --base "Hack Oregon Base v2" --output hackoregon-base-v2.box`. This will take some time.
+1. Open a host terminal and enter `vagrant package --base "Hack Oregon Base v2" --output hackoregon-base-v2.box`. This will take some time.
 2. Copy the `hackoregon-base-v2.box` file to an empty directory. 
-3. Go to the directory and type `vagrant box add --name hackoregon-base-v2 hackoregon-base-v2.box`.
-4. Type `vagrant init hackoregon-base-v2`. This will create a Vagrantfile.
+3. Go to the directory and enter `vagrant box add --name hackoregon-base-v2 hackoregon-base-v2.box`.
+4. Enter `vagrant init hackoregon-base-v2`. This will create a Vagrantfile.
 5. Edit the Vagrantfile and add the port forwarding: guest port 8888 to host localhost port 7777.
-6. Type `vagrant up --provision`.
+6. Enter `vagrant up --provision`.
 
 ## Exporting the virtual machine
 The final step is to export the virtual machine as an Open Virtualization Format (OVF) archive so you can share it with other people.
