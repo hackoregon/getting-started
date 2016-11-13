@@ -1,0 +1,8 @@
+#! /bin/bash
+
+# install all the services
+./1core
+./database-gis-services
+./data-science-services
+./install-guest-additions
+./vagrantize
