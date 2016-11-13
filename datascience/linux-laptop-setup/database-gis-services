@@ -20,7 +20,23 @@ sudo apt-get install -y \
   postgresql-9.5-postgis-2.2-scripts
 
 # make yourself a PostgreSQL superuser
+echo "Creating PostgreSQL superuser ${USER}."
 echo "If you're already a PostgreSQL superuser you can ignore the error message."
 sudo su -c "createuser -s ${USER}" postgres
+echo "You are now a PostgreSQL super-user with ID '${USER}'."
+echo "Creating a personal database for ${USER}."
+echo "If you've already created the ${USER} database you can ignore the error message."
+createdb -O ${USER} ${USER}
+echo "Your personal database ${USER} has been created."
 echo "http://apt.postgresql.org/pub/repos/apt repository added!"
-echo "You are now a PostgreSQL super-user with ID '${USER}'!"
+echo ""
+echo "Creating extensions in your personal database."
+echo "If you've already created the extensions you can ignore the error messages."
+echo "extension plpython3u"
+psql -c "CREATE EXTENSION plpython3u;"
+echo "extension postgis"
+psql -c "CREATE EXTENSION postgis;"
+echo "extension postgis_topology"
+psql -c "CREATE EXTENSION postgis_topology;"
+echo "extension pgrouting"
+psql -c "CREATE EXTENSION pgrouting;"
