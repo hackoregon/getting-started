@@ -26,5 +26,5 @@ echo ""
 echo "In the 'nano' editor, type 'Control-O' and 'Enter' to save to a temporary"
 echo "file. Then press 'Control-X' to save the file."
 echo ""
-sleep 20
+read -p "Press 'Enter' here when ready to edit via 'visudo'."
 sudo visudo
