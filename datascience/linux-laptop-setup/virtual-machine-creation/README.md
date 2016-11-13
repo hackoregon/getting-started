@@ -72,9 +72,8 @@ This procedure is optional but highly recommended.
 ## Packaging the virtual machine as a Vagrant box
 Reference: <https://www.vagrantup.com/docs/virtualbox/boxes.html>
 
-1. Open a host terminal and enter `vagrant package --base "Hack Oregon Base v2" --output hackoregon-base-v2.box`. This will take some time.
-2. Copy the `hackoregon-base-v2.box` file to an empty directory. 
-3. Go to the directory and enter `vagrant box add --name hackoregon-base-v2 hackoregon-base-v2.box`.
+1. Open a host terminal and `cd` to the directory where you want to store the finished Vagrant 'box' file. Enter `vagrant package --base "Hack Oregon Base v2" --output hackoregon-base-v2.box`. This will take some time.
+3. Enter `vagrant box add --name hackoregon-base-v2 hackoregon-base-v2.box`.
 4. Enter `vagrant init hackoregon-base-v2`. This will create a Vagrantfile.
 5. Edit the Vagrantfile and add the port forwarding: guest port 8888 to host localhost port 7777.
 6. Enter `vagrant up --provision`.
@@ -82,6 +81,9 @@ Reference: <https://www.vagrantup.com/docs/virtualbox/boxes.html>
 ## Exporting the virtual machine
 The final step is to export the virtual machine as an Open Virtualization Format (OVF) archive so you can share it with other people.
 
+1. Set up port forwarding. In the VirtualBox GUI, select the 'Hack Oregon Base v2' virtual machine and start the 'Settings' wizard. Select 'Network' and then 'Advanced'. Press the 'Port Forwarding' button.
+    * Add a rule for SSH: 'SSH' in the 'Name' field, '127.0.0.1' in the 'Host IP' field, '2222' in the 'Host Port' field. Leave the 'Guest IP' field empty and put '22' in the 'Guest Port' field. 
+    * Add a rule for Jupyter: 'Jupyter' in the 'Name' field, '127.0.0.1' in the 'Host IP' field, '7777' in the 'Host Port' field. Leave the 'Guest IP' field empty and put '8888' in the 'Guest Port' field. 
 1. Go into the VirtualBox 'File' menu and select 'Export Appliance'. You will see your Hack Oregon Base virtual machine listed. Select it; if you have any others make sure they are ***not*** selected. Then press 'Next'.
 2. Use OVF 2.0 and make sure the exported file extension is '.ova'. Check the 'Write Manifest File' box. Make a note of where VirtualBox is going to store the file! Then press 'Next'.
 3. Keep the defaults for the 'Appliance settings' screen and press the 'Export' button. The export will start. You'll get a progress window. It can take quite a while to complete the export!
