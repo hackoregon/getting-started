@@ -2,6 +2,8 @@
 
 echo "Installing Virtual Machine Manager"
 sudo apt-get install -y \
+  cloud-utils \
+  genisoimage \
   virt-manager \
   qemu-kvm \
   qemu-utils \
