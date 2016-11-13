@@ -39,9 +39,8 @@
 1. Start the virtual machine.
 2. When the virtual machine console shows a login prompt, log in as 'vagrant'.
 3. Enter `sudo visudo`. Enter the 'vagrant' password when 'sudo' asks for it. Then add the line
-    ````
-    vagrant ALL=(ALL:ALL) NOPASSWD: ALL
-    ```
+
+    `vagrant ALL=(ALL:ALL) NOPASSWD: ALL`
     
     to the bottom of the file. Then press `Control-O`, `Enter` and `Control-X` to save the file. 'sudo' will no longer ask you for a password!
 2. Enter `git clone https://github.com/hackoregon/getting-started`.
@@ -51,7 +50,7 @@
 5. Reboot the virtual machine with `sudo reboot`.
 5. When the virtual machine is back up, log back in again.
 3. Enter `cd getting-started/datascience/linux-laptop-setup`.
-6. Enter `./all-services`. You will need to enter the 'vagrant' password whenever 'sudo' asks for it. This is a master script that will run
+6. Enter `./all-services`. This is a master script that will run
     * `./1core`. This will install the core packages for all users.
     * `./database-gis-services`. This installs PostgreSQL and PostGIS for all users on the virtual machine. It will add 'vagrant' as a database super-user.
     * `./data-science-services`. This will install Miniconda and the data science environment for the 'vagrant' user.
