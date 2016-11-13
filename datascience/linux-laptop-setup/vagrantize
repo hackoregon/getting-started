@@ -15,16 +15,3 @@ sudo chown -R vagrant:vagrant /vagrant
 
 echo "Disabling reverse DNS lookup for ssh"
 sudo sed -i -e "\$aUseDNS no" /etc/ssh/sshd_config
-
-echo "The final step requires human intervention. An editor will open using"
-echo "'visudo'. Add the line"
-echo ""
-echo "    vagrant ALL=(ALL:ALL) NOPASSWD: ALL"
-echo ""
-echo "at the bottom of the file, save the file and close the editor."
-echo ""
-echo "In the 'nano' editor, type 'Control-O' and 'Enter' to save to a temporary"
-echo "file. Then press 'Control-X' to save the file."
-echo ""
-read -p "Press 'Enter' here when ready to edit via 'visudo'."
-sudo visudo
