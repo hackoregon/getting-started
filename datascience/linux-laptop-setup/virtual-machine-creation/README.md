@@ -44,23 +44,21 @@
 4. Type `git checkout <working branch>`.
 6. Type `./0update-upgrade`. This will upgrade all packages to the latest versions and will take some time.
 5. Reboot the virtual machine with `sudo reboot`.
-5. When the virtual machine is back up, log back in again with `ssh`.
+5. When the virtual machine is back up, log back in again.
 3. Type `cd getting-started/datascience/linux-laptop-setup`.
-5. Type `./1core`. This will install the core packages for all users.
-6. Install the services. Note that these two scripts must be run in the order shown below.
-    * Type `./database-gis-services`. This installs PostgreSQL and PostGIS for all users on the virtual machine. It will add 'vagrant' as a database super-user.
-    * Type `./data-science-services`. This will install Miniconda and the data science environment for the 'vagrant' user.
-
-## Installing the VirtualBox Guest Additions and 'vagrantizing' the virtual machine
-1. Type `./install-guest-additions`. Follow the on-screen instructions. You do not need to reboot.
-2. Type `./vagrantize`. Follow the on-screen instructions. This will prepare the virtual machine for use as a Vagrant box.
-9. Shut down the virtual machine with `sudo shutdown -h now`.
+6. Type `./all-services` This is a master script that will run
+    * `./1core`. This will install the core packages for all users.
+    * `./database-gis-services`. This installs PostgreSQL and PostGIS for all users on the virtual machine. It will add 'vagrant' as a database super-user.
+    * `./data-science-services`. This will install Miniconda and the data science environment for the 'vagrant' user.
+    * `./install-guest-additions`. This will install the VirtualBox guest additions. Follow the on-screen instructions. You do not need to reboot.
+    * `./vagrantize`. This will prepare the virtual machine for use as a Vagrant box. Follow the on-screen instructions.
+7. Shut the virtual machine down with `sudo shutdown -h now`.
 
 ## Compacting the virtual machine
 This procedure is optional but highly recommended.
 
 1. Open the VirtualBox GUI, go into the "Storage" settings and connect the ISO file for an Ubuntu 16.04.1 LTS desktop. I use Linux Mint 18, but any desktop will work as long as it's based on Ubuntu 16.04.1 LTS.
-2. Start the virtual machine. It will come up in the desktop, not in the server you just installed.
+2. Start the virtual machine. It will come up in the live system's desktop, not in the server you just installed.
 3. Open a terminal. Type `sudo apt install zerofree`.
 4. Type `sudo zerofree -v /dev/sda1`. This will fill all the unused blocks in the virtual disk with zeroes, resulting in a smaller image when compacted. It will take some time.
 5. Shut the virtual machine down with `sudo shutdown -h now` and remove the virtual CD from the drive in the 'Storage' settings.
