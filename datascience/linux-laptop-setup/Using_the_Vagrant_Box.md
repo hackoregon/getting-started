@@ -1,4 +1,4 @@
-Using the Hack Oregon Vagrant Box
+Using the Hack Oregon Base v2 Vagrant Box
 ================
 M. Edward (Ed) Borasky <znmeb@znmeb.net>
 

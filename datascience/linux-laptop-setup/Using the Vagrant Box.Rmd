@@ -1,5 +1,5 @@
 ---
-title: "Using the Hack Oregon Vagrant Box"
+title: "Using the Hack Oregon Base v2 Vagrant Box"
 author: "M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 output: github_document
 ---
