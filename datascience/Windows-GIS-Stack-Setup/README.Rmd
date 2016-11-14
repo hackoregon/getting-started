@@ -1,5 +1,5 @@
 ---
-title: "Setting up an open source GIS stack on Windows"
+title: "Setting up an open source data science stack on Windows"
 author: "M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 output: github_document
 ---
