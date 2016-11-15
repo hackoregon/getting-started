@@ -6,14 +6,14 @@
 
 
 ### PostgreSQL installation
-Our base install version for Hack Oregon is 9.5.x.  Please keep this in mind when you are downloading whatever installation package you choose.  
+Our base install version for Hack Oregon is 9.5.x.  Please keep this in mind when you are downloading whichever installation package you choose.  
 
 
-There are [several ways](https://www.postgresql.org/download/macosx/) to install postgres on your mac.  You should do whatever works well for you but we have found that the Postgres.app works well.  It ships with PostGIS and will keep the installation separate from any other versions of Postgres you already have installed.  Homebrew can sometimes be tricky but the current base install is 9.5.5.  There are also version specific packages for homebrew.  There are also other options listed on the page linked above.
+There are [several ways](https://www.postgresql.org/download/macosx/) to install postgres on your mac.  You should do whatever works well for you, but the Postgres.app seems to work well and includes PostGIS.  It will also keep the Postgres installation separate from any other versions of Postgres you already have installed.  Homebrew can sometimes be tricky but the current base install is 9.5.5. It has been installed successfully and version specific kegs are available.  There are also other options listed on the page linked above.
 
 
 **Installation via Postgres.app**
-* [Download](https://github.com/PostgresApp/PostgresApp/releases/download/9.5.5/Postgres-9.5.5.zip) the v9.5.5 installer and unzip it and move the .app to your Applications directory (just as you would any other app)
+* [Download](https://github.com/PostgresApp/PostgresApp/releases/download/9.5.5/Postgres-9.5.5.zip) the v9.5.5 installer, unzip it, and move the .app to your Applications directory (just as you would any other app)
 * When you run the app, the server will start and you’ll see an elephant icon appear in your menu bar.  
 
 
@@ -24,16 +24,15 @@ If you have a different version of postgres already installed, you can do a vers
     $ brew tap petere/postgresql
     $ brew install postgresql-9.5
 
-
-Note sure if this will work across different versions but you can also install PostGIS through homebrew::
+Not sure if this will work across different versions but you can also install PostGIS through homebrew::
     $ brew install postgis
-
-
 
 
 **Ports and Paths**
 In theory, you can have many different versions of postgres running at the same time but there are two things you will need to do to manage this. 
+
 1. Each postgres installation will need to be listening on a different port to ensure no port conflicts.  The postgresql.conf file can be set to listen on a specific port.  
+
 2. Only one set of command line tools can be available at once.  The PATH variable can should be set to point to the bin directory of whichever version of postgres you want to use.  If you’re switching between two different homebrew versions, this can be done using the brew link command.
 
 
