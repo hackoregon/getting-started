@@ -1,0 +1,12 @@
+#! /bin/bash
+
+echo "Set a password for PostgreSQL user / role ${USER} now."
+echo "Do *not* use the colon character in the password!"
+psql -c "\password ${USER}"
+
+# reference: https://www.postgresql.org/docs/9.5/static/libpq-pgpass.html
+echo "# hostname:port:database:username:password" >> ~/.pgpass
+chmod 0600 ~/.pgpass
+echo "localhost:5432:${USER}:${USER}:password" >> ~/.pgpass
+echo "Edit the file '~/.pgpass' now. Replace 'password' in the last line"
+echo "with the password you set above."
