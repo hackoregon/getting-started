@@ -1,11 +1,11 @@
-#Accessing the PostgeSQL DB on a virtual machine 
+# Accessing the PostgeSQL DB on a virtual machine 
 
-###This is a brief description of how to access the Postgres DB that's on your virtual machine(VM) inside Jupyter Notebook 
+### This is a brief description of how to access the Postgres DB that's on your virtual machine(VM) inside Jupyter Notebook 
 
-####First we need to create a new postgres user so we can connect to the DB server using this user in a Jupyter Notebook
+#### First we need to create a new postgres user so we can connect to the DB server using this user in a Jupyter Notebook
 
 1. From your home terminal ssh into the virtual machine by entering the command below
-  * ssh hack@localhost -p2222
+  * ssh vagrant@localhost -p2222
   * when prompted enter password: 'ORturkeyeggs'
   
 2. In VM terminal session switch to the postgres user using command below
@@ -21,26 +21,18 @@
   
 5. Close psql by entering the '\q' command in the psql session and hitting enter 
 
-#### Now that you have a new superuser created we need to activate the Jupyter Notebook virtual environment and install the Python psycopg2 package that lets us make connections to the DB
-
+#### You now have the pieces needed to connect to the DB using Jupyter Notebook. Open a Jupyter Notebook by following the steps below.
 1. Activate the Jupyter Notebook environment with the command below
   * activate-data-science
-  * you should now see this prompt in your terminal session: '(data-science) hack@hackoregon-base'
+  * you should now see this prompt in your terminal session: '(data-science) vagrant@hackoregon-base'
   
-2. Install dependency for psycopg2 using command below
- * sudo apt-get install libpq-dev
 
-3. Use pip to install psycopg2 using the following command
-  * pip install psycopg2
-  
-#### You now have the pieces needed to connect to the DB using Jupyter Notebook. Open a Jupyter Notebook by following the steps below.
-
-1. Start the Jupyter notebook server
+2. Start the Jupyter notebook server
   * your prompt in the VM terminal should still look like this: '(data-science) hack@hackoregon-base'
   * if it doesn't enter this command: 'activate-data-science'
   * finally start notebook server with: 'jupyter notebook --ip 0.0.0.0 --no-browser' 
   
-2. Then using your web browser go to: http://localhost:7777/tree
+3. Then using your web browser go to: http://localhost:7777/tree
   * you should now see the file structure of the VM inside a Jupyter notebook in your browser 
 
 #### Creating a new notebook so you can start writing scripts and connect to the DB
