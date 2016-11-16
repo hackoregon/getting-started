@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # LaTeX packages for PDF notebook downloads
-# File an issue at https://github.com/hackoregon/linux-laptop-setup/issues/new if you need others
+# File an issue at https://github.com/hackoregon/getting-started/issues/new if you need others
 sudo apt-get install -y \
   pandoc \
   pandoc-citeproc \
