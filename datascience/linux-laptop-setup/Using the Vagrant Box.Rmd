@@ -74,7 +74,16 @@ File an issue at <https://github.com/hackoregon/getting-started/issues/new>.
     ==> default: Mounting shared folders...
         default: /vagrant => /home/znmeb/vagrant-test
     ```
-7. Enter `vagrant ssh`. You'll be inside the box. Enter `activate-data-science` and then `jupyternb`. You'll see
+7. Enter `vagrant ssh`. You'll be inside the box. Enter 
+    ```
+    cd getting-started/datascience/linux-laptop-setup
+    git pull
+    ./configure-postgresql
+    ```
+
+    This updates the `getting-started` repository to the latest release and confgures the PostgreSQL database. You will be asked to set a PostgreSQL password for the `vagrant` user and to enter that password in a file, so you can access the database as `vagrant` without exposing your password!
+
+7. Enter `activate-data-science` and then `jupyternb`. You'll see
     ```
     [I 16:41:20.615 NotebookApp] [nb_conda_kernels] enabled, 2 kernels found
     [I 16:41:20.621 NotebookApp] Writing notebook server cookie secret to /run/user/1000/jupyter/notebook_cookie_secret
