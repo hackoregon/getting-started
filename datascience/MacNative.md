@@ -77,7 +77,7 @@ What Anaconda basically does is create environments in separate subfolders of it
 You first need to create an environment.  The following command in a terminal will create a fairly complete data science environment:
 
 
-    conda create -n data-science jupyter scikit-learn seaborn statsmodel django
+    conda create -n data-science jupyter scikit-learn seaborn statsmodels django
 
 
 `conda create` obviously creates an environment.  The `-n` or `--name` flag declares the name of that environment.  If you wanted Python 2.7, at this point you would add `python=2.7`.  The remaining list of packages are what conda will attempt to install at creation; it is not aware of all Python packages, but knows of around 300 and their dependencies.  For example, seaborn is collection of wrappers for nice matplotlib plots, so the above command will instal matplotlib along the way.
