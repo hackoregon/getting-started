@@ -10,3 +10,4 @@ chmod 0600 ~/.pgpass
 echo "localhost:5432:${USER}:${USER}:password" >> ~/.pgpass
 echo "Edit the file '~/.pgpass' now. Replace 'password' in the last line"
 echo "with the password you set above."
+edit ~/.pgpass
