@@ -18,5 +18,5 @@ sudo paperconfig -p letter
 sudo tl-paper set all letter
 
 echo "Installing authoring tools"
-R -e 'install.packages(c("flexdashboard", "bookdown", "tufte", "rticles"), quiet = TRUE)'
+R -e 'install.packages(c("flexdashboard", "bookdown", "tufte", "rticles", "formatR"), quiet = TRUE)'
 R -e 'devtools::install_github("rstudio/bookdown", build_vignettes = TRUE)'
