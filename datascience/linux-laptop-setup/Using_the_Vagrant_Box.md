@@ -94,6 +94,7 @@ Obtaining and configuring the base box
 8.  Enter
 
         cd getting-started/datascience/linux-laptop-setup
+        git checkout master
         git pull
         ./configure-postgresql
 
@@ -122,6 +123,7 @@ Using the configured box
         [I 16:41:51.878 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 
 4.  On the host, browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!
+5.  In the Jupyter file tree tab, go into `getting-started/datascience/linux-laptop-setup`. Click the link on the notebook `psycopg2_test.ipynb`. When the notebook tab opens, select `Run All` in the `Cell` menu. If the system is configured correctly there will be no errors.
 
 Shutdown sequencing
 -------------------
