@@ -9,3 +9,4 @@ Documents, links, software install scripts and other resources for getting start
 * [Using the Hack Oregon Base v2 Vagrant Box](https://github.com/hackoregon/getting-started/blob/master/datascience/linux-laptop-setup/Using_the_Vagrant_Box.md#using-the-hack-oregon-base-v2-vagrant-box)
 * [Making an Ubuntu Server Virtual Machine for Hack Oregon with VirtualBox and Vagrant](https://github.com/hackoregon/getting-started/tree/master/datascience/linux-laptop-setup/virtual-machine-creation#making-an-ubuntu-server-virtual-machine-for-hack-oregon-with-virtualbox-and-vagrant)
 * [Setting up a Linux Laptop for Hack Oregon Projects](https://github.com/hackoregon/getting-started/blob/master/datascience/linux-laptop-setup/README.md#setting-up-a-linux-laptop-for-hack-oregon-projects)
+* [Connecting QGIS and PostGIS](https://github.com/hackoregon/getting-started/blob/master/datascience/Windows-GIS-Stack-Setup/connecting-qgis-and-postgis.md#connecting-qgis-and-postgis)
