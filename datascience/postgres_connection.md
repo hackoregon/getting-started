@@ -30,7 +30,7 @@
 2. Start the Jupyter notebook server
   * your prompt in the VM terminal should still look like this: '(data-science) hack@hackoregon-base'
   * if it doesn't enter this command: 'activate-data-science'
-  * finally start notebook server with: 'jupyter notebook --ip 0.0.0.0 --no-browser' 
+  * finally start notebook server with: 'jupyternb' 
   
 3. Then using your web browser go to: http://localhost:7777/tree
   * you should now see the file structure of the VM inside a Jupyter notebook in your browser 
