@@ -15,8 +15,8 @@ System requirements
 3.  VirtualBox 5.0 or later.
 4.  Vagrant 1.8.7 or later.
 
-Getting started
----------------
+Obtaining and configuring the base box
+--------------------------------------
 
 1.  Install VirtualBox and Vagrant.
 2.  Download the file - it's in our Google Drive repository. The name is `hackoregon-base-v2.box`.
@@ -36,13 +36,22 @@ Getting started
         the comments in the Vagrantfile as well as documentation on
         `vagrantup.com` for more information on using Vagrant.
 
-5.  Edit the Vagrantfile to add the Jupyter notebook port forwarding. Add the line `config.vm.network "forwarded_port", guest: 8888, host: 7777`. It should look like this:
+5.  Edit the Vagrantfile to add the Jupyter notebook port forwarding. Find the section that looks like this:
+
+        # Create a forwarded port mapping which allows access to a specific port
+        # within the machine from a port on the host machine. In the example below,
+        # accessing "localhost:8080" will access port 80 on the guest machine.
+        # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+    Add the line `config.vm.network "forwarded_port", guest: 8888, host: 7777` after the `# config.vm.network` line. It should look like this when you're done
 
         # Create a forwarded port mapping which allows access to a specific port
         # within the machine from a port on the host machine. In the example below,
         # accessing "localhost:8080" will access port 80 on the guest machine.
         # config.vm.network "forwarded_port", guest: 80, host: 8080
         config.vm.network "forwarded_port", guest: 8888, host: 7777
+
+    Save the edited Vagrantfile.
 
 6.  Enter `vagrant up --provision --provider virtualbox`. You'll see
 
@@ -73,7 +82,33 @@ Getting started
         ==> default: Mounting shared folders...
             default: /vagrant => /home/znmeb/vagrant-test
 
-7.  Enter `vagrant ssh`. You'll be inside the box. Enter `activate-data-science` and then `jupyternb`. You'll see
+7.  Enter `vagrant ssh`. You'll be logged into the box as `vagrant`. The box ships with a publicly-known password, `ORturkeyeggs`, for the `vagrant` account. You will need to change it! Enter `passwd`.
+
+        $ passwd
+        Changing password for vagrant.
+        (current) UNIX password: 
+        Enter new UNIX password: 
+        Retype new UNIX password: 
+        passwd: password updated successfully
+
+8.  Enter
+
+        cd getting-started/datascience/linux-laptop-setup
+        git pull
+        ./configure-postgresql
+
+    `git pull` updates the `getting-started` repository to the latest release and `./configure-postgresql` configures the PostgreSQL database.
+
+    First, you will need to set the *PostgreSQL* password for the PostgreSQL `vagrant` superuser. The script will prompt you. Don't use a colon (':') in the password. The configuration file in the next step uses colon as a separator. If you mis-type one of the password entries, just run the script again.
+
+    Second, you will need to edit the file `~/.pgpass`. Replace the string 'password' with the password you set above and save the file. This file allows you to connect to the `vagrant` database as the `vagrant` user in a Jupyter notebook without exposing the database password!
+
+Using the configured box
+------------------------
+
+1.  Open a terminal in the directory where the Vagrantfile is stored.
+2.  Enter `vagrant up` if you previously shut the box down with `vagrant halt`. Then enter `vagrant ssh`.
+3.  Enter `activate-data-science` and then `jupyternb`. You'll see
 
         [I 16:41:20.615 NotebookApp] [nb_conda_kernels] enabled, 2 kernels found
         [I 16:41:20.621 NotebookApp] Writing notebook server cookie secret to /run/user/1000/jupyter/notebook_cookie_secret
@@ -86,7 +121,16 @@ Getting started
         [I 16:41:51.878 NotebookApp] The Jupyter Notebook is running at: http://0.0.0.0:8888/
         [I 16:41:51.878 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 
-8.  On the host, browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!
+4.  On the host, browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!
+
+Shutdown sequencing
+-------------------
+
+1.  Close all the browser tabs using the server.
+2.  Stop the Jupyter notebook server by typing `Control-C` twice in the terminal where the server is running.
+3.  Deactivate the environment by entering `deactivate-data-science`.
+4.  Enter `exit` to log out of the Vagrant box.
+5.  Enter `vagrant halt` in the host terminal.
 
 Bugs? Feature requests? Unclear documentation?
 ----------------------------------------------
