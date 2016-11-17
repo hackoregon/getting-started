@@ -1,0 +1,22 @@
+Dealing With VirtualBox Guest Additions Version Mismatches
+================
+M. Edward (Ed) Borasky <znmeb@znmeb.net>
+2016-11-17
+
+Background
+----------
+
+Both the Hack Oregon Base Open Virtualization Archive (OVA) and Vagrant box have the VirtualBox guest additions pre-installed using the version of VirtualBox I had installed when I created them, 5.0.28 r111378. Any version of VirtualBox 5.0 or greater will work, but if you're using something other than 5.0.28 r111378 you will get a warning from Vagrant.
+
+How to update the guest additions
+---------------------------------
+
+1.  Log in to the virtual machine. If you're using the Vagrant box, just do `vagrant ssh`. If you're using the OVA, log in on the console as `vagrant`, or do `ssh vagrant@localhost -p2222` from a host terminal.
+2.  Do
+
+        cd ~/getting-started/datascience/linux-laptop-setup
+        git checkout master
+        git pull
+        ./install-guest-additions
+
+    The script will talk you through the process.
