@@ -4,6 +4,8 @@ Documents, links, software install scripts and other resources for getting start
 ## Contents
 
 ### Installing Python and Jupyter Notebook
+Hack Oregon projects frequently use Python programs to clean, input, transform, analyze, and present data.   Two common Python tools are Anaconda (an implementation of the Python interpreter) and Jupyter Notebook (a web-based interface for creating, testing, and running Python programs).
+
 * [Using the Hack Oregon Base v2 VirtualBox OVA](https://github.com/hackoregon/getting-started/blob/master/datascience/linux-laptop-setup/Using_the_VirtualBox_OVA.md#using-the-hack-oregon-base-v2-virtualbox-ova)
 * [Native OSX/macOS installation instructions](https://github.com/hackoregon/getting-started/blob/master/datascience/MacNative.md#native-osxmacos-installation-instructions)
 * [Setting up an open source data science stack on Windows](https://github.com/hackoregon/getting-started/blob/master/datascience/Windows-GIS-Stack-Setup/README.md#setting-up-an-open-source-data-science-stack-on-windows)
