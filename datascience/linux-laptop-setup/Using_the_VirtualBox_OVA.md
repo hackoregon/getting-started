@@ -17,12 +17,12 @@ System requirements
 Obtaining and configuring the base box
 --------------------------------------
 
-1.  Install VirtualBox.
-2.  Download the file - it's in our Google Drive repository. The name is `hackoregon-base-v2.ova`.
-3.  Start VirtualBox. In the `File` menu, select `Import Appliance`. Browse to the downloaded file and press the `Import` button.
+1.  [Download and Install VirtualBox 5.0 or later](https://www.virtualbox.org/wiki/Downloads).
+2.  Download the file - it's available [here in our Google Drive repository](https://drive.google.com/drive/folders/0B2VTjTSmFU2lUW90dFUtZVlLZjA). The name is `Hack Oregon Base v2.ova`.  It's ~2GB in size, so if you can get it from someone directly (via thumb drive) then that will likely be faster and use less bandwidth.
+3.  Start VirtualBox. In the `File` menu, select `Import Appliance`. Browse to the downloaded .ova file and press the `Import` button.
 4.  Select the `Hack Oregon Base v2` virtual machine and press the green `Start` arrow.
 5.  At the login prompt on the console, log in as `vagrant`, password `ORturkeyeggs`.
-6.  The box ships with a publicly-known password, `ORturkeyeggs`, for the `vagrant` account. You will need to change it! Enter `passwd`.
+6.  The box ships with a publicly-known password, `ORturkeyeggs`, for the `vagrant` account. For personal security you should change it! Enter `passwd`.
 
         $ passwd
         Changing password for vagrant.
@@ -63,7 +63,7 @@ Using the configured box
         [I 16:41:51.878 NotebookApp] The Jupyter Notebook is running at: http://0.0.0.0:8888/
         [I 16:41:51.878 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 
-5.  On the host, browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!
+5.  On the host (your computer rather than the virtual machine), browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!
 6.  In the Jupyter file tree tab, go into `getting-started/datascience/linux-laptop-setup`. Click the link on the notebook `psycopg2_test.ipynb`. When the notebook tab opens, select `Run All` in the `Cell` menu. If the system is configured correctly there will be no errors.
 
 Shutdown sequencing
