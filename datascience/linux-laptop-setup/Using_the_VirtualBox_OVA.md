@@ -1,6 +1,6 @@
 Using the Hack Oregon Base v2 VirtualBox OVA
 ================
-M. Edward (Ed) Borasky <znmeb@znmeb.net>
+M. Edward (Ed) Borasky <znmeb@znmeb.net> and Scott Lewis <slewis@hackoregon.org>
 
 Bugs? Feature requests? Unclear documentation?
 ----------------------------------------------
