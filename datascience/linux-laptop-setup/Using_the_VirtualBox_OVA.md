@@ -20,10 +20,10 @@ Obtaining and configuring the base box
 1.  [Download and Install VirtualBox 5.0 or later](https://www.virtualbox.org/wiki/Downloads).
 2.  Download the .ova file - it's available [here in our Google Drive repository](https://drive.google.com/drive/folders/0B2VTjTSmFU2lUW90dFUtZVlLZjA). The name is `Hack Oregon Base v2.ova`.  It's ~2GB in size, so if you can get it from someone directly (via thumb drive) then that will  be faster and use less bandwidth.  Please ask around before you download it directly.  This .ova file has an entire environment already installed on it (e.g. Python Mini-Conda, Jupyter Notebook and various Python libraries).  
 3.  Start VirtualBox installed in step 1. In the `File` menu, select `Import Appliance`. Browse to the downloaded .ova file from step 2 and select 'Next' and then `Import`.  This will take several minutes to complete the import.  When complete it will look something like this ![images/hackor.vb1.png](images/hackor.vb1.png)
-4.  Select the `Hack Oregon Base v2` virtual machine in Virtual Box and select the green `Start` arrow.  The vm will take some time to start, and produce output as it starts.
-5.  At the login prompt on the console, log in as `vagrant`, password `ORturkeyeggs`.
+4.  Select the `Hack Oregon Base v2` virtual machine in Virtual Box and select the green `Start` arrow.  VirtualBox will open a separate window for this vm and once visible the vm will take some time to start producing text output as it starts.
+5.  Once it appears, at the login prompt, log in as `vagrant`, password `ORturkeyeggs`.
 ![images/hackor.vb2.png](images/hackor.vb2.png)
-6.  The box ships with a publicly-known password, `ORturkeyeggs`, for the `vagrant` account. For personal security you should change it! Enter `passwd`.
+6.  The box ships with a publicly-known password, `ORturkeyeggs`, for the `vagrant` account. For personal security you should change the password! To do so, at the prompt enter `passwd`.
 
         $ passwd
         Changing password for vagrant.
@@ -32,7 +32,7 @@ Obtaining and configuring the base box
         Retype new UNIX password: 
         passwd: password updated successfully
 
-7.  Enter
+7.  To configure postgressql, enter
 
         cd getting-started/datascience/linux-laptop-setup
         git checkout master
@@ -43,7 +43,8 @@ Obtaining and configuring the base box
 
     First, you will need to set the *PostgreSQL* password for the PostgreSQL `vagrant` superuser. The script will prompt you. Don't use a colon (':') in the password. The configuration file in the next step uses colon as a separator. If you mis-type one of the password entries, just run the script again.
 
-    Second, you will need to edit the file `~/.pgpass`. Replace the string 'password' with the password you set above and save the file. This file allows you to connect to the `vagrant` database as the `vagrant` user in a Jupyter notebook without exposing the database password!
+    Second, you will need to edit the file `~/.pgpass`. Replace the string 'password' with the password you set above and save the file
+    by typing:  ':wq<enter>'. This file allows you to connect to the `vagrant` database as the `vagrant` user in a Jupyter notebook without exposing the database password!
 
 Using the configured box
 ------------------------
@@ -51,7 +52,9 @@ Using the configured box
 1.  Open a terminal on the host system.
 2.  If the virtual machine is powered off, start it with the green arrow.
 3.  Enter `ssh vagrant@localhost -p 2222`. You will be asked for the new password you defined above.
-4.  Enter `activate-data-science` and then `jupyternb`. You'll see
+4.  Enter `activate-data-science`.  This starts an environment that allows you to run jupyter notebook and other
+tools.
+5.  Enter `jupyternb`. As output you should see
 
         [I 16:41:20.615 NotebookApp] [nb_conda_kernels] enabled, 2 kernels found
         [I 16:41:20.621 NotebookApp] Writing notebook server cookie secret to /run/user/1000/jupyter/notebook_cookie_secret
