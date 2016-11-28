@@ -25,7 +25,7 @@ Hack Oregon projects frequently use Python programs to clean, input, transform, 
 Note that with the installation instructions given above, it's unnecessary to do any of the install described in these tutorials.
 
 * [Jupyter Notebook aka IPython Notebook Interesting Notebooks](https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks) This is a very large resource of tutorials, books, online notebooks.
-* [Jupyter Notebook Video Tutorial](https://www.youtube.com/watch?v=Rc4JQWowG5I). 
+* [Jupyter Notebook Video Tutorial](https://www.youtube.com/watch?v=Rc4JQWowG5I)
 
 ##Tooling References
 
