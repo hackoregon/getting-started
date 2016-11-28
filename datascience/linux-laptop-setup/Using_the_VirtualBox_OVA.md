@@ -20,9 +20,9 @@ Obtaining and configuring the base box
 1.  [Download and Install VirtualBox 5.0 or later](https://www.virtualbox.org/wiki/Downloads).
 2.  Download the .ova file - it's available [here in our Google Drive repository](https://drive.google.com/drive/folders/0B2VTjTSmFU2lUW90dFUtZVlLZjA). The name is `Hack Oregon Base v2.ova`.  It's ~2GB in size, so if you can get it from someone directly (via thumb drive) then that will  be faster and use less bandwidth.  Please ask around before you download it directly.  This .ova file has an entire environment already installed on it (e.g. Python Mini-Conda, Jupyter Notebook and various Python libraries).  
 3.  Start VirtualBox installed in step 1. In the `File` menu, select `Import Appliance`. Browse to the downloaded .ova file from step 2 and select 'Next' and then `Import`.  This will take several minutes to complete the import.  When complete it will look something like this ![images/hackor.vb1.png](images/hackor.vb1.png)
-4.  Select the `Hack Oregon Base v2` virtual machine in Virtual Box and select the green `Start` arrow.  The vm will take some time to start, and produce output as it starts ![images/hackor.vb2.png](images/hackor.vb2.png)
-
+4.  Select the `Hack Oregon Base v2` virtual machine in Virtual Box and select the green `Start` arrow.  The vm will take some time to start, and produce output as it starts.
 5.  At the login prompt on the console, log in as `vagrant`, password `ORturkeyeggs`.
+![images/hackor.vb2.png](images/hackor.vb2.png)
 6.  The box ships with a publicly-known password, `ORturkeyeggs`, for the `vagrant` account. For personal security you should change it! Enter `passwd`.
 
         $ passwd
