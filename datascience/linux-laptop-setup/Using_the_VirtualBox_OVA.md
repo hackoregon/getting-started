@@ -66,7 +66,8 @@ tools setup for Hack Oregon data science work.
         [I 16:41:51.878 NotebookApp] The Jupyter Notebook is running at: http://0.0.0.0:8888/
         [I 16:41:51.878 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 
-5.  On the host (your computer rather than the virtual machine), browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!
+5.  On the host (your computer rather than the virtual machine), browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!  ![images/hackor.jnb1.png](images/hackor.jnb1.png)
+
 6.  In the Jupyter file tree tab, go into `getting-started/datascience/linux-laptop-setup`. Click the link on the notebook `psycopg2_test.ipynb`. When the notebook tab opens, select `Run All` in the `Cell` menu. If the system is configured correctly there will be no errors.  
 
 OVA Shutdown 
