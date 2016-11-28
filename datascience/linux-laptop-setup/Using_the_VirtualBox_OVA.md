@@ -14,7 +14,7 @@ System requirements
 2.  A 64-bit host system, preferably with virtualization hardware. This is unlikely to work on a 32-bit host even though there are claims that it will. It's just not worth the hassle.
 3.  VirtualBox 5.0 or later.
 
-Obtaining, Importing, and configuring the Hack Oregon Base v2.ova
+Obtaining, Importing, and Configuring the Hack Oregon Base v2.ova
 --------------------------------------
 
 1.  [Download and Install VirtualBox 5.0 or later](https://www.virtualbox.org/wiki/Downloads).
@@ -43,8 +43,7 @@ Obtaining, Importing, and configuring the Hack Oregon Base v2.ova
 
     First, you will need to set the *PostgreSQL* password for the PostgreSQL `vagrant` superuser. The script will prompt you. Don't use a colon (':') in the password. The configuration file in the next step uses colon as a separator. If you mis-type one of the password entries, just run the script again.
 
-    Second, you will need to edit the file `~/.pgpass`. Replace the string 'password' with the password you set above and save the file
-    by entering:  ':wq'.   Once created, this file allows you to connect to the `vagrant` database as the `vagrant` user in a Jupyter notebook without exposing the database password!
+    Second, you will be put into and editor to edit the file `~/.pgpass`.  You should replace the string 'password' at the top of the file with the password you set above and save your changes by entering ':wq' to write your changes and quit.   Once created, this file allows you to connect to the `vagrant` database as the `vagrant` user in a Jupyter notebook without exposing the database password!
 
 Using the configured .ova for Jupyter Notebook Analysis
 ------------------------
