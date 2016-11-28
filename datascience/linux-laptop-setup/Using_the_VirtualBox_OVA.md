@@ -53,7 +53,7 @@ Using the configured box
 2.  If the virtual machine is powered off, start it with the green arrow.
 3.  Enter `ssh vagrant@localhost -p 2222`. You will be asked for the new password you defined above.
 4.  Enter `activate-data-science`.  This starts an environment that allows you to run jupyter notebook and other
-tools.
+tools setup for Hack Oregon data science work.
 5.  Enter `jupyternb`. As output you should see
 
         [I 16:41:20.615 NotebookApp] [nb_conda_kernels] enabled, 2 kernels found
@@ -70,11 +70,11 @@ tools.
 5.  On the host (your computer rather than the virtual machine), browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!
 6.  In the Jupyter file tree tab, go into `getting-started/datascience/linux-laptop-setup`. Click the link on the notebook `psycopg2_test.ipynb`. When the notebook tab opens, select `Run All` in the `Cell` menu. If the system is configured correctly there will be no errors.
 
-Shutdown sequencing
+OVA Shutdown 
 -------------------
 
-1.  Close all the browser tabs using the server.
-2.  Stop the Jupyter notebook server by typing `Control-C` twice in the terminal where the server is running.
+1.  Close all/any Jupyter Notebook browser tabs to make sure you have saved your work.
+2.  Stop the Jupyter notebook server by typing `Control-C` twice in the vm terminal where the jupyternb server is running.
 3.  Deactivate the environment by entering `deactivate-data-science`.
 4.  Enter `sudo shutdown -h now` to shut down the virtual machine. You can close the host terminal.
 
