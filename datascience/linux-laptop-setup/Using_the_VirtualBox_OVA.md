@@ -77,8 +77,3 @@ OVA Shutdown
 2.  Stop the Jupyter notebook server by typing `Control-C` twice in the vm terminal where the jupyternb server is running.
 3.  Deactivate the environment by entering `deactivate-data-science`.
 4.  Enter `sudo shutdown -h now` to shut down the virtual machine. You can close the host terminal.
-
-Bugs? Feature requests? Unclear documentation?
-----------------------------------------------
-
-File an issue at <https://github.com/hackoregon/getting-started/issues/new>.
