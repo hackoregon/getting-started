@@ -44,7 +44,7 @@ Obtaining, Importing, and configuring the Hack Oregon Base v2.ova
     First, you will need to set the *PostgreSQL* password for the PostgreSQL `vagrant` superuser. The script will prompt you. Don't use a colon (':') in the password. The configuration file in the next step uses colon as a separator. If you mis-type one of the password entries, just run the script again.
 
     Second, you will need to edit the file `~/.pgpass`. Replace the string 'password' with the password you set above and save the file
-    by typing:  ':wq<enter>'. This file allows you to connect to the `vagrant` database as the `vagrant` user in a Jupyter notebook without exposing the database password!
+    by entering:  ':wq'.   Once created, this file allows you to connect to the `vagrant` database as the `vagrant` user in a Jupyter notebook without exposing the database password!
 
 Using the configured .ova for Jupyter Notebook Analysis
 ------------------------
@@ -68,7 +68,7 @@ tools setup for Hack Oregon data science work.
         [I 16:41:51.878 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 
 5.  On the host (your computer rather than the virtual machine), browse to <http://localhost:7777/tree>. You'll be in the Hack Oregon Jupyter notebook environment!
-6.  In the Jupyter file tree tab, go into `getting-started/datascience/linux-laptop-setup`. Click the link on the notebook `psycopg2_test.ipynb`. When the notebook tab opens, select `Run All` in the `Cell` menu. If the system is configured correctly there will be no errors.
+6.  In the Jupyter file tree tab, go into `getting-started/datascience/linux-laptop-setup`. Click the link on the notebook `psycopg2_test.ipynb`. When the notebook tab opens, select `Run All` in the `Cell` menu. If the system is configured correctly there will be no errors.  
 
 OVA Shutdown 
 -------------------
