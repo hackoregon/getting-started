@@ -20,18 +20,18 @@ Hack Oregon projects frequently use Python programs to clean, input, transform, 
 * [Setting up an open source data science stack on Windows](https://github.com/hackoregon/getting-started/blob/master/datascience/Windows-GIS-Stack-Setup/README.md#setting-up-an-open-source-data-science-stack-on-windows)
 * [Setting up a Linux Laptop for Hack Oregon Projects](https://github.com/hackoregon/getting-started/blob/master/datascience/linux-laptop-setup/README.md#setting-up-a-linux-laptop-for-hack-oregon-projects)
 
-###Tooling Reference
-
-* [Making an Ubuntu Server Virtual Machine for Hack Oregon with VirtualBox and Vagrant](https://github.com/hackoregon/getting-started/tree/master/datascience/linux-laptop-setup/virtual-machine-creation#making-an-ubuntu-server-virtual-machine-for-hack-oregon-with-virtualbox-and-vagrant)
-* [Using the Hack Oregon Base v2 Vagrant Box](https://github.com/hackoregon/getting-started/blob/master/datascience/linux-laptop-setup/Using_the_Vagrant_Box.md#using-the-hack-oregon-base-v2-vagrant-box)
-* [Dealing With VirtualBox Guest Additions Version Mismatches](https://github.com/hackoregon/getting-started/blob/master/datascience/linux-laptop-setup/guest-additions-version-mismatches.md#dealing-with-virtualbox-guest-additions-version-mismatches)
-* [Accessing the PostgeSQL DB on a virtual machine](https://github.com/hackoregon/getting-started/blob/master/datascience/postgres_connection.md#accessing-the-postgesql-db-on-a-virtual-machine)
-* [Connecting QGIS and PostGIS](https://github.com/hackoregon/getting-started/blob/master/datascience/Windows-GIS-Stack-Setup/connecting-qgis-and-postgis.md#connecting-qgis-and-postgis)
-
 ##Jupyter Notebook Tutorials and Example Usage 
 
 Note that with the installation instructions given above, it's unnecessary to do any of the install described in these tutorials.
 
 * [Jupyter Notebook aka IPython Notebook Interesting Notebooks](https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks) This is a very large resource of tutorials, books, online notebooks.
 * [Jupyter Notebook Video Tutorial](https://www.youtube.com/watch?v=Rc4JQWowG5I). 
+
+##Hack Oregon Tooling References.  These will be useful to those that wish to add to/contribute to the Hack Oregon tool chain development
+
+* [Making an Ubuntu Server Virtual Machine for Hack Oregon with VirtualBox and Vagrant](https://github.com/hackoregon/getting-started/tree/master/datascience/linux-laptop-setup/virtual-machine-creation#making-an-ubuntu-server-virtual-machine-for-hack-oregon-with-virtualbox-and-vagrant)
+* [Using the Hack Oregon Base v2 Vagrant Box](https://github.com/hackoregon/getting-started/blob/master/datascience/linux-laptop-setup/Using_the_Vagrant_Box.md#using-the-hack-oregon-base-v2-vagrant-box)
+* [Dealing With VirtualBox Guest Additions Version Mismatches](https://github.com/hackoregon/getting-started/blob/master/datascience/linux-laptop-setup/guest-additions-version-mismatches.md#dealing-with-virtualbox-guest-additions-version-mismatches)
+* [Accessing the PostgeSQL DB on a virtual machine](https://github.com/hackoregon/getting-started/blob/master/datascience/postgres_connection.md#accessing-the-postgesql-db-on-a-virtual-machine)
+* [Connecting QGIS and PostGIS](https://github.com/hackoregon/getting-started/blob/master/datascience/Windows-GIS-Stack-Setup/connecting-qgis-and-postgis.md#connecting-qgis-and-postgis)
 
