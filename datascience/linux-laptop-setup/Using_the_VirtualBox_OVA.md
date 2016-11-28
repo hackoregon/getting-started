@@ -14,7 +14,7 @@ System requirements
 2.  A 64-bit host system, preferably with virtualization hardware. This is unlikely to work on a 32-bit host even though there are claims that it will. It's just not worth the hassle.
 3.  VirtualBox 5.0 or later.
 
-Obtaining and configuring the base box
+Obtaining, Importing, and configuring the Hack Oregon Base v2.ova
 --------------------------------------
 
 1.  [Download and Install VirtualBox 5.0 or later](https://www.virtualbox.org/wiki/Downloads).
@@ -46,7 +46,7 @@ Obtaining and configuring the base box
     Second, you will need to edit the file `~/.pgpass`. Replace the string 'password' with the password you set above and save the file
     by typing:  ':wq<enter>'. This file allows you to connect to the `vagrant` database as the `vagrant` user in a Jupyter notebook without exposing the database password!
 
-Using the configured box
+Using the configured .ova for Jupyter Notebook Analysis
 ------------------------
 
 1.  Open a terminal on the host system.
