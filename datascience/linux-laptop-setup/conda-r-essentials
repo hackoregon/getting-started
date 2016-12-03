@@ -1,0 +1,6 @@
+#! /bin/bash
+
+echo ""
+echo "Installing 'r-essentials' in 'data-science'"
+source $HOME/miniconda3/bin/activate data-science
+conda install --yes --channel r r-essentials
