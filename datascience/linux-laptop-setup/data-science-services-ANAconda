@@ -1,0 +1,75 @@
+#! /bin/bash
+
+# what machine have we got?
+if [ `arch` == "x86_64" ]
+then
+  export ARCH=64
+  export TAG=x86_64
+else
+  export ARCH=32
+  export TAG=x86
+fi
+
+echo "Your machine is ${ARCH} bits."
+echo ""
+
+# https://www.continuum.io/downloads
+echo "Making sure $HOME/Downloads exists."
+mkdir -p $HOME/Downloads
+pushd $HOME/Downloads
+echo "Removing any old Anaconda3 installers."
+rm -f Anaconda3*
+echo "Downloading the latest Anaconda3 installer."
+wget -q https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-$TAG.sh
+echo "Download is finished."
+popd
+
+echo "Ready to install Anaconda3. Notes:"
+echo ""
+echo "1. This is a batch install using all the defaults. License approval on"
+echo "   your part is assumed."
+echo "2. The installer will not overwrite an existing Anaconda3 installation."
+echo "   You can ignore the error it throws when it tries."
+echo ""
+
+# go for it!
+bash $HOME/Downloads/Anaconda3-4.2.0-Linux-$TAG.sh -b
+
+# make sure everything's there for the data science students
+echo "Updating the Anaconda3 distribution."
+~/anaconda3/bin/conda update --yes --all
+
+echo ""
+echo ""
+echo "Creating a Conda environment named 'data-science' with 'django', 'jupyter',"
+echo "'seaborn', 'statsmodels' and 'scikit-learn'. This will not overwrite an"
+echo "existing 'data-science'. You can ignore the error it throws when it tries."
+~/anaconda3/bin/conda create --yes --name data-science \
+  django jupyter seaborn statsmodels scikit-learn gdal psycopg2
+
+echo ""
+echo "Installing 'djangorestframework' in 'data-science' with pip."
+source $HOME/anaconda3/bin/activate data-science
+pip install djangorestframework
+source $HOME/anaconda3/bin/deactivate data-science
+echo ""
+echo "Adding the 'conda', data science activate and deactivate aliases to your"
+echo "'.bashrc' file."
+cat data-science-aliases-ANAconda >> $HOME/.bashrc
+echo "Log out and back in again to define the aliases."
+echo ""
+echo "To use the data science services, open a terminal and type"
+echo ""
+echo "    activate-data-science"
+echo "    jupyter notebook"
+echo ""
+echo "A browser will open to your Jupyter notebook server. Type"
+echo ""
+echo "    deactivate-data-science"
+echo ""
+echo "after shutting down the notebook server."
+echo ""
+echo "To start a notebook server on the local area network, type"
+echo ""
+echo "    activate-data-science"
+echo "    jupyternb"
