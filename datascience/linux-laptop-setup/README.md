@@ -59,9 +59,11 @@ For virtual machine hosting, you need to have twice as much RAM in the host as t
 Python data science / machine learning
 --------------------------------------
 
-We are using the Miniconda3 Python distribution for data science / machine learning tasks. To install the data science tools, type `./data-science-services`. You will get detailed install instructions when you run the script.
+We will make use of one of either the Miniconda3 or Anaconda3 Python distributions for data science / machine learning tasks. Your choice of which to use depends on your disk space constraints, bandwidth limitations, and your desire to have the extra suite of packages included in Anaconda3. Miniconda3 is a stipped-down version of Miniconda3 which uses much less local disk space but contains a much smaller set of the accompanying data science packages. To install the Miniconda3 version of data science packages, type `./data-science-services`. To install the larger set of data science packages contained in Anaconda3, type `./data-science-services-ANAconda`. You will get detailed install instructions when you run the script.
 
-The data science services environment includes
+Those who have limited disk space or whose bandwidth does not allow for downloading the larger size of Anaconda should use Miniconda3. Those not limited by such contraints and that would like to have a larger suite of python packages for data science should use Anaconda3. Their website describes Anaconda3 as "a high performance distribution of Python and R [that] includes over 100 of the most popular Python, R and Scala packages for data science. " "If you don't want the hundreds of packages included with Anaconda, you can download Miniconda, a mini version of Anaconda that includes just conda, its dependencies, and Python." A list of packages included in the Anaconda3 installer can be found here: https://docs.continuum.io/anaconda/pkg-docs. "If you don't have time or disk space for the entire distribution, try Miniconda which contains only conda and Python. Then install just the individual packages you want through the conda command."
+ 
+The data science services environment includes:
 
 -   Python 3
 -   the Jupyter notebook server

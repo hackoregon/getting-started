@@ -1,0 +1,4 @@
+alias activate-data-science="source $HOME/anaconda3/bin/activate data-science"
+alias deactivate-data-science="source $HOME/anaconda3/bin/deactivate data-science"
+alias conda="$HOME/anaconda3/bin/conda"
+alias jupyternb="jupyter notebook --ip 0.0.0.0 --no-browser"
